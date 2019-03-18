@@ -722,12 +722,11 @@ var SearchComponent = /** @class */ (function () {
         this.fetch = true;
         this.service.query(city).subscribe(function (res) {
             var response = res;
-            setTimeout(function () {
-                _this.router.navigate(['/city', response.id]);
-            }, 1500);
+            _this.router.navigate(['/city', response.id]);
         }, function (err) {
             _this.fetch = false;
             _this.error = true;
+            console.log("search.component.searchInfo() - error received - " + err);
         });
     };
     return SearchComponent;
